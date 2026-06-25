@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Tech</title>
+    <title>Meu Blog Tech</title>
     
     <style>
         /* Estilo geral da página */
@@ -15,17 +15,10 @@
             padding: 0;
         }
 
-        /* Limita a largura do conteúdo principal */
-        .container {
-            max-width: 800px;
-            margin: 0 auto; 
-            padding: 20px;
-        }
-
         /* Estilo do Cabeçalho */
         header {
-            background-color: #183C63; 
-            color: #ffffff;            
+            background-color: #183C63; /* Azul escuro com ótimo contraste */
+            color: #FFFFFF;            /* Texto branco */
             text-align: center;        
             padding: 40px 20px;
             margin-bottom: 30px;
@@ -35,22 +28,40 @@
             margin: 0 0 10px 0;
         }
 
-        /* Estrutura de cada Post */
+        header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Container principal que limita a largura e centraliza o conteúdo */
+        .container {
+            max-width: 800px;
+            margin: 0 auto; 
+            padding: 0 20px 40px 20px;
+        }
+
+        /* Estrutura de cada Post (Artigo) */
         article {
             background-color: #ffffff; 
             padding: 30px;
             border-radius: 8px;        
             box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-            display: flex; /* Alinha a imagem ao lado da div de textos */
-            gap: 20px; /* Espaçamento entre a imagem e o texto */
-            margin-bottom: 20px;
+            display: flex; /* Alinha a imagem ao lado do texto */
+            gap: 20px;     /* Espaçamento interno entre imagem e texto */
+            margin-bottom: 25px;
         }
 
+        /* Ajuste da imagem do post */
         article img {
             width: 80px;
             height: 80px;
             object-fit: cover;
             border-radius: 4px;
+        }
+
+        /* Caixa de texto ao lado da imagem */
+        .post-conteudo {
+            flex: 1;
         }
 
         h2 {
@@ -59,6 +70,7 @@
             margin-bottom: 5px;
         }
 
+        /* Estilo para destacar o autor */
         .artigo-autor {
             font-weight: bold;
             color: #666666;
@@ -70,20 +82,25 @@
         button {
             background: #f0f2f5;
             border: none;
-            padding: 8px 12px;
+            padding: 8px 15px;
             border-radius: 20px;
             cursor: pointer;
             margin-right: 10px;
             font-size: 1rem;
-            transition: background 0.2s;
+            transition: all 0.2s;
         }
 
         button:hover {
             background: #e4e6eb;
         }
 
+        /* Efeito visual ao clicar no botão */
+        button:active {
+            transform: scale(0.95);
+        }
+
         button span {
-            margin-left: 5px;
+            margin-left: 6px;
             font-weight: bold;
         }
     </style>
@@ -98,10 +115,10 @@
     <main class="container">
         
         <article>
-            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao.">
-            <div>
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao: um livro aberto de onde emerge um cérebro digital brilhante.">
+            <div class="post-conteudo">
                 <h2>Meu primeiro post</h2>
-                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p class="artigo-autor">Por: Wesley Gabriel</p>
                 <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
                 <button>❤️<span>0</span></button>
                 <button>👍<span>0</span></button>
@@ -109,11 +126,11 @@
         </article>
 
         <article>
-            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao.">
-            <div>
-                <h2>Criando novas páginas</h2>
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao: um livro aberto de onde emerge um cérebro digital brilhante.">
+            <div class="post-conteudo">
+                <h2>Organizando o Layout com CSS</h2>
                 <p class="artigo-autor">Por: Marcelo Paludetto</p>
-                <p>Neste segundo post, aprendemos a organizar melhor nosso código usando tags semânticas e a criar interações inteligentes com JS.</p>
+                <p>Neste post aprendemos a usar propriedades incríveis como o Flexbox para alinhar elementos e o Box Model para controlar margens e espaçamentos.</p>
                 <button>❤️<span>0</span></button>
                 <button>👍<span>0</span></button>
             </div>
@@ -122,22 +139,24 @@
     </main>
 
     <script>
-        // Seleciona TODOS os botões da página
+        // Seleciona todos os botões de reação da página
         const botoes = document.querySelectorAll("button");
 
-        // Adiciona a lógica de clique de forma independente para cada botão
+        // Passa por cada botão para configurar o clique de forma isolada
         botoes.forEach(function (botao) {
-            let curtiu = false; // Controle individual do estado do botão
+            let curtiu = false; // Cada botão tem seu próprio controle de estado
 
             botao.addEventListener("click", function botaoClicado() {
                 let texto = botao.querySelector("span");
 
                 if (curtiu === false) {
-                    texto.textContent++; // Aumenta o contador
-                    curtiu = true;       // Altera o estado para "curtido"
+                    texto.textContent++; // Adiciona a curtida
+                    curtiu = true;       // Define que o usuário já clicou
+                    botao.style.background = "#e2eafc"; // Opcional: muda a cor do botão ativo
                 } else {
-                    texto.textContent--; // Diminui o contador
-                    curtiu = false;      // Altera o estado para "não curtido"
+                    texto.textContent--; // Remove a curtida
+                    curtiu = false;      // Reseta o estado
+                    botao.style.background = "#f0f2f5"; // Volta à cor padrão
                 }
             });
         });
