@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog Tech</title>
+    <title>Blog da Empatia</title>
     
     <style>
         /* Estilo geral da página */
         body {
-            background-color: #f4f4f9; 
-            color: #1a1a2e;            
+            background-color: #f4f7f6; 
+            color: #2c3e50;            
             font-family: sans-serif;   
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
 
         /* Estilo do Cabeçalho */
         header {
-            background-color: #183C63; 
+            background-color: #34495e; /* Tom elegante e acolhedor */
             color: #FFFFFF;            
             text-align: center;        
             padding: 40px 20px;
@@ -45,7 +45,7 @@
             background-color: #ffffff; 
             padding: 30px;
             border-radius: 8px;        
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
             display: flex; /* Alinha a imagem ao lado do texto */
             gap: 20px;     /* Espaçamento interno entre imagem e texto */
             margin-bottom: 25px;
@@ -66,7 +66,7 @@
         }
 
         h2 {
-            color: #183C63;
+            color: #34495e;
             margin-top: 0;
             margin-bottom: 5px;
         }
@@ -74,7 +74,7 @@
         /* Estilo para destacar o autor */
         .artigo-autor {
             font-weight: bold;
-            color: #666666;
+            color: #7f8c8d;
             margin-bottom: 15px;
             font-size: 0.9rem;
         }
@@ -109,40 +109,40 @@
 <body>
 
     <header>
-        <h1>Meu blog tech</h1>
-        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+        <h1>Blog da Empatia</h1>
+        <p>Conectando pessoas através do respeito, da escuta e do afeto</p>
     </header>
 
     <main class="container">
         
         <article>
-            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=150" alt="Notebook com código na tela">
+            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=150" alt="Duas pessoas conversando de forma acolhedora">
             <div class="post-conteudo">
-                <h2>Meu primeiro post</h2>
+                <h2>O que é Empatia de verdade?</h2>
                 <p class="artigo-autor">Por: Wesley Gabriel</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <p>Empatia vai muito além de apenas "se colocar no lugar do outro". É tentar enxergar o mundo com os olhos da outra pessoa e ouvir sem julgar.</p>
                 <button>❤️<span>0</span></button>
                 <button>👍<span>0</span></button>
             </div>
         </article>
 
         <article>
-            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=150" alt="Telas mostrando design de site">
+            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=150" alt="Amigos rindo e se apoiando">
             <div class="post-conteudo">
-                <h2>Organizando o Layout com CSS</h2>
+                <h2>A importância da Escuta Ativa</h2>
                 <p class="artigo-autor">Por: Marcelo Paludetto</p>
-                <p>Neste post aprendemos a usar propriedades incríveis como o Flexbox para alinhar elements e o Box Model para controlar margens e espaçamentos.</p>
+                <p>Muitas vezes ouvimos os outros já pensando no que vamos responder. A escuta ativa é estar presente de verdade para acolher o que o outro sente.</p>
                 <button>❤️<span>0</span></button>
                 <button>👍<span>0</span></button>
             </div>
         </article>
 
         <article>
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=150" alt="Linhas de código Javascript de perto">
+            <img src="https://images.unsplash.com/photo-1484863137850-59afedd0599d?w=150" alt="Pessoas unindo as mãos em círculo">
             <div class="post-conteudo">
-                <h2>Dominando a lógica com JavaScript</h2>
+                <h2>Pequenos gestos mudam o dia</h2>
                 <p class="artigo-autor">Por: Wesley Gabriel</p>
-                <p>Adicionar interatividade mudou tudo! Aprendemos a usar loops com forEach para fazer com que múltiplos botões de curtidas funcionem sozinhos.</p>
+                <p>Uma palavra de apoio, um sorriso ou simplesmente perguntar "está tudo bem com você?" pode fazer toda a diferença na vida de alguém.</p>
                 <button>❤️<span>0</span></button>
                 <button>👍<span>0</span></button>
             </div>
@@ -164,7 +164,7 @@
                 if (curtiu === false) {
                     texto.textContent++; // Adiciona a curtida
                     curtiu = true;       // Define que o usuário já clicou
-                    botao.style.background = "#e2eafc"; // Muda a cor do botão ativo
+                    botao.style.background = "#fcd5ce"; // Muda a cor do botão ativo para um tom acolhedor
                 } else {
                     texto.textContent--; // Remove a curtida
                     curtiu = false;      // Reseta o estado
