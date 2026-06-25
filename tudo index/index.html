@@ -13,95 +13,135 @@
             font-family: sans-serif;   
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Garante que o rodapé fique embaixo se a página tiver pouco conteúdo */
         }
 
-        /* Limita a largura do conteúdo para não esticar demais em telas grandes */
+        /* Limita a largura do conteúdo principal */
         .container {
             max-width: 800px;
-            width: 100%;
             margin: 0 auto; 
             padding: 20px;
-            box-sizing: border-box;
-            flex: 1; /* Faz o conteúdo principal expandir para empurrar o rodapé */
         }
 
         /* Estilo do Cabeçalho */
         header {
-            background-color: #0f4c81; 
+            background-color: #183C63; 
             color: #ffffff;            
             text-align: center;        
             padding: 40px 20px;
+            margin-bottom: 30px;
         }
 
         header h1 {
             margin: 0 0 10px 0;
         }
 
-        header p {
-            margin: 0;
-            opacity: 0.9;
-        }
-
-        /* Estilo do Post */
+        /* Estrutura de cada Post */
         article {
             background-color: #ffffff; 
             padding: 30px;
             border-radius: 8px;        
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
-            margin-top: 20px;
-        }
-
-        h2 {
-            color: #0f4c81;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        /* Informações do autor e data */
-        .post-meta {
-            font-size: 0.9rem;
-            color: #666666;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+            display: flex; /* Alinha a imagem ao lado da div de textos */
+            gap: 20px; /* Espaçamento entre a imagem e o texto */
             margin-bottom: 20px;
         }
 
-        /* Estilo do Rodapé */
-        footer {
-            background-color: #1a1a2e;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
+        article img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        h2 {
+            color: #183C63;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+            color: #666666;
+            margin-bottom: 15px;
             font-size: 0.9rem;
-            margin-top: 40px;
+        }
+
+        /* Estilo dos Botões de Reação */
+        button {
+            background: #f0f2f5;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #e4e6eb;
+        }
+
+        button span {
+            margin-left: 5px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Meu Blog Tech</h1>
+        <h1>Meu blog tech</h1>
         <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
     </header>
 
     <main class="container">
         
         <article>
-            <h2>Meu primeiro post</h2>
-            
-            <div class="post-meta">
-                Por: <strong>Wesley Gabriel</strong> | <time datetime="2026-06-25">25 de Junho de 2026</time>
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao.">
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <button>❤️<span>0</span></button>
+                <button>👍<span>0</span></button>
             </div>
-            
-            <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+        </article>
+
+        <article>
+            <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educacao.">
+            <div>
+                <h2>Criando novas páginas</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>Neste segundo post, aprendemos a organizar melhor nosso código usando tags semânticas e a criar interações inteligentes com JS.</p>
+                <button>❤️<span>0</span></button>
+                <button>👍<span>0</span></button>
+            </div>
         </article>
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Meu Blog Tech. Desenvolvido por Wesley Gabriel.</p>
-    </footer>
+    <script>
+        // Seleciona TODOS os botões da página
+        const botoes = document.querySelectorAll("button");
+
+        // Adiciona a lógica de clique de forma independente para cada botão
+        botoes.forEach(function (botao) {
+            let curtiu = false; // Controle individual do estado do botão
+
+            botao.addEventListener("click", function botaoClicado() {
+                let texto = botao.querySelector("span");
+
+                if (curtiu === false) {
+                    texto.textContent++; // Aumenta o contador
+                    curtiu = true;       // Altera o estado para "curtido"
+                } else {
+                    texto.textContent--; // Diminui o contador
+                    curtiu = false;      // Altera o estado para "não curtido"
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
