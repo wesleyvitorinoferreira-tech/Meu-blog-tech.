@@ -8,58 +8,80 @@
     <style>
         /* Estilo geral da página */
         body {
-            background-color: #f4f4f9; /* Cor de fundo clara */
-            color: #1a1a2e;            /* Cor do texto escura para dar contraste */
-            font-family: sans-serif;   /* Tipo de letra limpa e moderna */
+            background-color: #f4f4f9; 
+            color: #1a1a2e;            
+            font-family: sans-serif;   
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que o rodapé fique embaixo se a página tiver pouco conteúdo */
         }
 
         /* Limita a largura do conteúdo para não esticar demais em telas grandes */
         .container {
             max-width: 800px;
-            margin: 0 auto; /* Centraliza o conteúdo na tela */
+            width: 100%;
+            margin: 0 auto; 
             padding: 20px;
+            box-sizing: border-box;
+            flex: 1; /* Faz o conteúdo principal expandir para empurrar o rodapé */
         }
 
         /* Estilo do Cabeçalho */
         header {
-            background-color: #0f4c81; /* Fundo azul escuro */
-            color: #ffffff;            /* Texto branco (ótimo contraste com o azul) */
-            text-align: center;        /* Alinha o texto no centro */
+            background-color: #0f4c81; 
+            color: #ffffff;            
+            text-align: center;        
             padding: 40px 20px;
-            margin-bottom: 30px;
         }
 
         header h1 {
             margin: 0 0 10px 0;
         }
 
+        header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
         /* Estilo do Post */
         article {
-            background-color: #ffffff; /* Fundo branco para o post se destacar */
+            background-color: #ffffff; 
             padding: 30px;
-            border-radius: 8px;        /* Arredonda os cantos do post */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra leve de fundo */
+            border-radius: 8px;        
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+            margin-top: 20px;
         }
 
         h2 {
             color: #0f4c81;
             margin-top: 0;
+            margin-bottom: 10px;
         }
 
-        address {
-            font-style: normal;
+        /* Informações do autor e data */
+        .post-meta {
+            font-size: 0.9rem;
             color: #666666;
             margin-bottom: 20px;
-            display: block;
+        }
+
+        /* Estilo do Rodapé */
+        footer {
+            background-color: #1a1a2e;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Meu blog tech</h1>
+        <h1>Meu Blog Tech</h1>
         <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
     </header>
 
@@ -68,12 +90,18 @@
         <article>
             <h2>Meu primeiro post</h2>
             
-            <address>Por: Marcelo Paludetto</address>
+            <div class="post-meta">
+                Por: <strong>Wesley Gabriel</strong> | <time datetime="2026-06-25">25 de Junho de 2026</time>
+            </div>
             
             <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
         </article>
 
     </main>
+
+    <footer>
+        <p>&copy; 2026 Meu Blog Tech. Desenvolvido por Wesley Gabriel.</p>
+    </footer>
 
 </body>
 </html>
