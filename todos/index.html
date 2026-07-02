@@ -17,7 +17,7 @@
 
         /* Estilo do Cabeçalho */
         header {
-            background-color: #34495e; /* Tom elegante e acolhedor */
+            background-color: #34495e; 
             color: #FFFFFF;            
             text-align: center;        
             padding: 40px 20px;
@@ -33,21 +33,21 @@
             opacity: 0.9;
         }
 
-        /* Container principal que limita a largura e centraliza o conteúdo */
+        /* Container principal */
         .container {
             max-width: 800px;
             margin: 0 auto; 
             padding: 0 20px 40px 20px;
         }
 
-        /* Estrutura de cada Post (Artigo) */
+        /* Estrutura de cada Post */
         article {
             background-color: #ffffff; 
             padding: 30px;
             border-radius: 8px;        
             box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
-            display: flex; /* Alinha a imagem ao lado do texto */
-            gap: 20px;     /* Espaçamento interno entre imagem e texto */
+            display: flex; 
+            gap: 20px;     
             margin-bottom: 25px;
             align-items: center;
         }
@@ -95,7 +95,16 @@
             background: #e4e6eb;
         }
 
-        /* Efeito visual ao clicar no botão */
+        /* Estado ativo quando clicado (curtido) */
+        button.ativo {
+            background: #fcd5ce;
+        }
+
+        button.ativo:hover {
+            background: #fbc4bb;
+        }
+
+        /* Efeito visual de clique mecânico */
         button:active {
             transform: scale(0.95);
         }
@@ -116,7 +125,7 @@
     <main class="container">
         
         <article>
-            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=150" alt="Duas pessoas conversando de forma acolhedora">
+            <img src="https://unsplash.com" alt="Duas pessoas conversando de forma acolhedora">
             <div class="post-conteudo">
                 <h2>O que é Empatia de verdade?</h2>
                 <p class="artigo-autor">Por: Wesley Gabriel</p>
@@ -127,7 +136,7 @@
         </article>
 
         <article>
-            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=150" alt="Amigos rindo e se apoiando">
+            <img src="https://unsplash.com" alt="Amigos rindo e se apoiando">
             <div class="post-conteudo">
                 <h2>A importância da Escuta Ativa</h2>
                 <p class="artigo-autor">Por: Marcelo Paludetto</p>
@@ -138,7 +147,7 @@
         </article>
 
         <article>
-            <img src="https://images.unsplash.com/photo-1484863137850-59afedd0599d?w=150" alt="Pessoas unindo as mãos em círculo">
+            <img src="https://unsplash.com" alt="Pessoas unindo as mãos em círculo">
             <div class="post-conteudo">
                 <h2>Pequenos gestos mudam o dia</h2>
                 <p class="artigo-autor">Por: Wesley Gabriel</p>
@@ -151,24 +160,23 @@
     </main>
 
     <script>
-        // Seleciona todos os botões de reação da página
         const botoes = document.querySelectorAll("button");
 
-        // Passa por cada botão para configurar o clique de forma isolada
         botoes.forEach(function (botao) {
-            let curtiu = false; // Cada botão tem seu próprio controle de estado
+            let curtiu = false; 
 
-            botao.addEventListener("click", function botaoClicado() {
+            botao.addEventListener("click", function () {
                 let texto = botao.querySelector("span");
+                
+                // Alterna a classe de estilo CSS
+                botao.classList.toggle("ativo");
 
                 if (curtiu === false) {
-                    texto.textContent++; // Adiciona a curtida
-                    curtiu = true;       // Define que o usuário já clicou
-                    botao.style.background = "#fcd5ce"; // Muda a cor do botão ativo para um tom acolhedor
+                    texto.textContent++; 
+                    curtiu = true;       
                 } else {
-                    texto.textContent--; // Remove a curtida
-                    curtiu = false;      // Reseta o estado
-                    botao.style.background = "#f0f2f5"; // Volta à cor padrão
+                    texto.textContent--; 
+                    curtiu = false;      
                 }
             });
         });

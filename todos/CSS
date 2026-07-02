@@ -1,3 +1,9 @@
-button:active {
-    transform: scale(0.95);
+/* Nova classe para o botão quando estiver curtido */
+button.ativo {
+    background: #fcd5ce;
+}
+
+/* Garante que o hover funcione de forma sutil no botão ativo */
+button.ativo:hover {
+    background: #fbc4bb;
 }
