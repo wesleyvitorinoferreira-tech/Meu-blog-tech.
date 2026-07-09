@@ -79,6 +79,14 @@
             font-size: 0.9rem;
         }
 
+        /* Estilo da área de reações para alinhar os botões */
+        .botoes-reacao {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
         /* Estilo dos Botões de Reação */
         button {
             background: #f0f2f5;
@@ -86,7 +94,6 @@
             padding: 8px 15px;
             border-radius: 20px;
             cursor: pointer;
-            margin-right: 10px;
             font-size: 1rem;
             transition: all 0.2s;
         }
@@ -130,8 +137,12 @@
                 <h2>O que é Empatia de verdade?</h2>
                 <p class="artigo-autor">Por: Wesley Gabriel</p>
                 <p>Empatia vai muito além de apenas "se colocar no lugar do outro". É tentar enxergar o mundo com os olhos da outra pessoa e ouvir sem julgar.</p>
-                <button>❤️<span>0</span></button>
-                <button>👍<span>0</span></button>
+                <div class="botoes-reacao">
+                    <button>❤️<span>0</span></button>
+                    <button>👍<span>0</span></button>
+                    <button>💡<span>0</span></button>
+                    <button>😮<span>0</span></button>
+                </div>
             </div>
         </article>
 
@@ -141,44 +152,35 @@
                 <h2>A importância da Escuta Ativa</h2>
                 <p class="artigo-autor">Por: Marcelo Paludetto</p>
                 <p>Muitas vezes ouvimos os outros já pensando no que vamos responder. A escuta ativa é estar presente de verdade para acolher o que o outro sente.</p>
-                <button>❤️<span>0</span></button>
-                <button>👍<span>0</span></button>
-            </div>
-        </article>
-
-        <article>
-            <img src="https://unsplash.com" alt="Pessoas unindo as mãos em círculo">
-            <div class="post-conteudo">
-                <h2>Pequenos gestos mudam o dia</h2>
-                <p class="artigo-autor">Por: Wesley Gabriel</p>
-                <p>Uma palavra de apoio, um sorriso ou simplesmente perguntar "está tudo bem com você?" pode fazer toda a diferença na vida de alguém.</p>
-                <button>❤️<span>0</span></button>
-                <button>👍<span>0</span></button>
+                <div class="botoes-reacao">
+                    <button>❤️<span>0</span></button>
+                    <button>👍<span>0</span></button>
+                    <button>💡<span>0</span></button>
+                    <button>😮<span>0</span></button>
+                </div>
             </div>
         </article>
 
     </main>
 
     <script>
+        // O JavaScript continua funcionando perfeitamente para todos os novos botões!
         const botoes = document.querySelectorAll("button");
 
-        botoes.forEach(function (botao) {
-            let curtiu = false; 
+        botoes.forEach(function(botao) {
+            botao.addEventListener("click", botaoClicado);
 
-            botao.addEventListener("click", function () {
+            function botaoClicado() {
+                botao.classList.toggle("ativo");
+                
                 let texto = botao.querySelector("span");
                 
-                // Alterna a classe de estilo CSS
-                botao.classList.toggle("ativo");
-
-                if (curtiu === false) {
-                    texto.textContent++; 
-                    curtiu = true;       
+                if (botao.classList.contains("ativo")) {
+                    texto.textContent++;
                 } else {
-                    texto.textContent--; 
-                    curtiu = false;      
+                    texto.textContent--;
                 }
-            });
+            }
         });
     </script>
 
