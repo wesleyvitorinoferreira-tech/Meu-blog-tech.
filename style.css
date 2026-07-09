@@ -61,6 +61,14 @@ h2 {
     color: #34495e;
     margin-top: 0;
     margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+/* Estilo do subtítulo curto */
+h2 small {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    font-weight: normal;
 }
 
 /* Estilo para destacar o autor */
@@ -69,6 +77,15 @@ h2 {
     color: #7f8c8d;
     margin-bottom: 15px;
     font-size: 0.9rem;
+}
+
+/* Estilo para a fonte da informação */
+.artigo-fonte {
+    font-size: 0.8rem;
+    color: #95a5a6;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 /* Estilo da área de reações para alinhar os botões */
@@ -112,4 +129,3 @@ button span {
     margin-left: 6px;
     font-weight: bold;
 }
-                                   

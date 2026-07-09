@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog da Empatia</title>
-    <!-- Vincula o seu arquivo de estilo separado -->
-    <link rel="stylesheet" href="CSS">
+    <!-- Conecta com o seu arquivo de estilos separado -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -16,12 +16,14 @@
 
     <main class="container">
         
+        <!-- PRIMEIRO POST -->
         <article>
             <img src="https://unsplash.com" alt="Duas pessoas conversando de forma acolhedora">
             <div class="post-conteudo">
                 <h2>O que é Empatia de verdade?</h2>
                 <p class="artigo-autor">Por: Wesley Gabriel</p>
                 <p>Empatia vai muito além de apenas "se colocar no lugar do outro". É tentar enxergar o mundo com os olhos da outra pessoa e ouvir sem julgar.</p>
+                <p class="artigo-fonte">Fonte: Autoria própria</p>
                 <div class="botoes-reacao">
                     <button>❤️<span>0</span></button>
                     <button>👍<span>0</span></button>
@@ -31,12 +33,60 @@
             </div>
         </article>
 
+        <!-- SEGUNDO POST -->
         <article>
             <img src="https://unsplash.com" alt="Amigos rindo e se apoiando">
             <div class="post-conteudo">
                 <h2>A importância da Escuta Ativa</h2>
-                                                                                                                                                                                                                                           <p class="artigo-autor">Por: Wesley Gabriel</p>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
                 <p>Muitas vezes ouvimos os outros já pensando no que vamos responder. A escuta ativa é estar presente de verdade para acolher o que o outro sente.</p>
+                <p class="artigo-fonte">Fonte: Instituto de Psicologia Aplicada</p>
+                <div class="botoes-reacao">
+                    <button>❤️<span>0</span></button>
+                    <button>👍<span>0</span></button>
+                    <button>💡<span>0</span></button>
+                    <button>😮<span>0</span></button>
+                </div>
+            </div>
+        </article>
+
+        <!-- TERCEIRO POST -->
+        <article>
+            <img src="https://unsplash.com" alt="Pessoas colaborando em equipe">
+            <div class="post-conteudo">
+                <h2>História da Tecnologia: Quem criou o primeiro computador?</h2>
+                <p class="artigo-autor">Por: Felipe (Colaborador)</p>
+                <p>
+                    Apesar de Alan Turing ser conhecido como pai da computação, ele não criou o primeiro computador.
+                    Entre os primeiros computadores, um deles foi chamado Colossus projetado por Tommy Flowers durante a
+                    Segunda Guerra Mundial e também, praticamente na mesma época, o ENIAC foi projetado por J. Presper
+                    Eckert e John Mauchly.
+                    <br><br>Embora o Colossus tenha funcionado antes como um "herói de guerra" especializado, o ENIAC é
+                    frequentemente chamado de "pai" por ser o primeiro programável de uso geral. E aí, qual você
+                    consideraria como o primeiro computador?
+                </p>
+                <p class="artigo-fonte">Fonte: The National Museum of Computing</p>
+                <div class="botoes-reacao">
+                    <button>❤️<span>0</span></button>
+                    <button>👍<span>0</span></button>
+                    <button>💡<span>0</span></button>
+                    <button>😮<span>0</span></button>
+                </div>
+            </div>
+        </article>
+
+        <!-- QUARTO POST (CUMPRINDO O NOVO DESAFIO) -->
+        <article>
+            <img src="https://unsplash.com" alt="Placa de circuito eletrônico brilhando em azul">
+            <div class="post-conteudo">
+                <h2>Por que o Bluetooth tem esse nome?<br><small>Uma homenagem viking</small></h2>
+                <p class="artigo-autor">Por: Seu Nome</p>
+                <p>
+                    Você sabia que o nome da tecnologia sem fio que usamos todos os dias foi inspirado em um rei? 
+                    O termo homenageia o rei Harald Bluetooth, que unificou as tribos da Dinamarca. 
+                    Da mesma forma, a tecnologia de <strong>radiofrequência</strong> foi criada para unir e conectar diferentes dispositivos eletrônicos em uma única rede.
+                </p>
+                <p class="artigo-fonte">Fonte: Bluetooth Special Interest Group (SIG)</p>
                 <div class="botoes-reacao">
                     <button>❤️<span>0</span></button>
                     <button>👍<span>0</span></button>
@@ -48,25 +98,7 @@
 
     </main>
 
-    <script>
-        const botoes = document.querySelectorAll("button");
-
-        botoes.forEach(function(botao) {
-            botao.addEventListener("click", botaoClicado);
-
-            function botaoClicado() {
-                botao.classList.toggle("ativo");
-                
-                let texto = botao.querySelector("span");
-                
-                if (botao.classList.contains("ativo")) {
-                    texto.textContent++;
-                } else {
-                    texto.textContent--;
-                }
-            }
-        });
-    </script>
-
+    <!-- Conecta com o seu arquivo de interações separado -->
+    <script src="script.js"></script>
 </body>
 </html>
